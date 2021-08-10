@@ -1,0 +1,11 @@
+input relation Edge(src: u32, dest: u32)
+
+relation Connected(src: u32, dest: u32)
+Connected(src, dest) :- Edge(src, dest).
+Connected(src, dest) :- Edge(src, interum), Connected(interum, dest).
+
+output relation StronglyConnected(node: u32, regime: u32)
+StronglyConnected(node, regime) :-
+    Connected(node, dest),
+    Connected(dest, node),
+    var regime = dest.group_by(node).group_min().

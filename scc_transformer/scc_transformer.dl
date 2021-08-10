@@ -1,0 +1,14 @@
+import graph
+
+input relation Edge(src: u32, dest: u32)
+
+function src(edge: Edge): u32 {
+    return edge.src
+}
+
+function dest(edge: Edge): u32 {
+    return edge.dest
+}
+
+output relation StronglyConnected[(u32, u32)]
+apply SCC(Edge, src, dest) -> (StronglyConnected)

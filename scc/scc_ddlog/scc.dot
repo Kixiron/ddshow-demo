@@ -1,0 +1,11 @@
+digraph {
+    0 [label=Connected];
+    1 [label="Edge"];
+    2 [label=StronglyConnected];
+    3 [label="ddlog_std::Singleton"];
+    0 -> 0;
+    0 -> 2;
+    0 -> 2;
+    1 -> 0;
+    1 -> 0;
+}
